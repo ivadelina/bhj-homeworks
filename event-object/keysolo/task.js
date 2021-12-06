@@ -12,8 +12,8 @@ class Game {
 
   reset() {
     this.setNewWord();
-    this.winsElement.textContent = 0;
-    this.lossElement.textContent = 0;
+    this.winsElement.textContent = 0; 
+    this.lossElement.textContent = 0; 
   }
 
   registerEvents() {
@@ -24,6 +24,16 @@ class Game {
       В случае правильного ввода слова вызываем this.success()
       При неправильном вводе символа - this.fail();
      */
+
+      let realSymdol = this.currentSymbol.innerText;
+      console.log(realSymdol);
+      document.addEventListener('keydown', function(event) {
+        if(realSymdol === event.key) {
+        }
+          
+      });
+
+      
   }
 
   success() {

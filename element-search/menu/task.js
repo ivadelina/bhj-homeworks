@@ -1,16 +1,18 @@
 let links = Array.from(document.querySelectorAll("a.menu__link"));
+
 for(let el = 0; el < links.length; el++) {
-    links[el].onclick = function() {
-        console.log(links[el])
+    links[el].onclick = function(event) {
+        close();
         if (links[el]?.nextElementSibling?.matches('ul.menu') === true) {
-            if(links[el]?.nextElementSibling?.matches('menu_active') === false) {
-                links[el].nextElementSibling.classList.add("menu_active");
-            } else {
-                links[el].nextElementSibling.classList.remove("menu_active");
-            };
+            event.preventDefault();
+            links[el]?.nextElementSibling?.classList.toggle("menu_active");
         }; 
-    };   
+    };  
 }; 
+function close() {
+    let active = document.querySelector("ul.menu_active");
+    active?.classList?.remove("menu_active");
+};
 
 
 
