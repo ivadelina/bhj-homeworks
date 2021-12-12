@@ -29,6 +29,7 @@ class Game {
       console.log(realSymdol);
       document.addEventListener('keydown', function(event) {
         if(realSymdol === event.key) {
+          this.success();
         }
           
       });

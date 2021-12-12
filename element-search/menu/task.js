@@ -1,12 +1,18 @@
 let links = Array.from(document.querySelectorAll("a.menu__link"));
 
-for(let el = 0; el < links.length; el++) {
-    links[el].onclick = function(event) {
-        close();
-        if (links[el]?.nextElementSibling?.matches('ul.menu') === true) {
+for(let el of links) {
+    el.onclick = function(event) {
+        if(event.target.nextElementSibling?.matches(".menu_active")) {
+            let active = event.target.nextElementSibling;
+            active.classList.remove("menu_active");
             event.preventDefault();
-            links[el]?.nextElementSibling?.classList.toggle("menu_active");
-        }; 
+        } else {
+            close();
+            if (el?.nextElementSibling?.matches('ul.menu') === true) {
+                event.preventDefault();
+                el?.nextElementSibling?.classList.add("menu_active");   
+            };
+        };     
     };  
 }; 
 function close() {
