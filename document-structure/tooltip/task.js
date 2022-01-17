@@ -9,7 +9,7 @@ questions.forEach(function(el) {
     let widthPosition = position.x + 20 + "px";
     let heightPosition = position.y + 20 + "px";
     if(!evt.target.nextElementSibling?.classList.contains("tooltip")) {
-        evt.target.insertAdjacentHTML("afterEnd","<div class='tooltip' style='left:`${widthPosition}`; top:`${heightPosition}`'>`${evt.target.title}`</div>");    
+        evt.target.insertAdjacentHTML("afterEnd",`<div class='tooltip' style='left:${widthPosition}; top:${heightPosition}'>${evt.target.title}</div>`);    
         if(document.querySelector(".tooltip_active")) {
             document.querySelector(".tooltip_active").classList.remove("tooltip_active");
             evt.target.nextElementSibling?.classList.toggle("tooltip_active"); 
