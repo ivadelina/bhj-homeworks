@@ -1,9 +1,7 @@
 let nameInput = document.getElementById("task__input");
 let namebutton = document.getElementById("tasks__add");
 let nameList = document.getElementById("tasks__list");
-
 namebutton.addEventListener("click", addtask);
-
 function addtask (evt) {
     evt.preventDefault();
     let valueInput = nameInput.value.trim();
@@ -19,13 +17,6 @@ function addtask (evt) {
         nameInput.value = "";
     }; 
 };
-
-
-
-
-
-
-
 
 
 
