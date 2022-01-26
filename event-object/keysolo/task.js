@@ -25,17 +25,14 @@ class Game {
       При неправильном вводе символа - this.fail();
      */
 
-      let realSymdol = this.currentSymbol.innerText;
-      console.log(realSymdol);
-      document.addEventListener('keydown', function(event) {
+
+      document.addEventListener('keydown', event => {
+        let realSymdol = this.currentSymbol.innerText;
         if(realSymdol === event.key) {
           this.success();
-        }
-          
-      });
-
-      
-  }
+        } else this.fail();  
+      });     
+  };
 
   success() {
     this.currentSymbol.classList.add('symbol_correct');
