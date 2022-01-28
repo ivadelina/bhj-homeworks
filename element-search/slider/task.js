@@ -4,19 +4,7 @@ let arrowRight = document.querySelector(".slider__arrow_next");
 let dots = Array.from(document.querySelectorAll(".slider__dot"));
 let lastElId = items.length - 1
 function beActive(currentActiveId) {
-    let activeId = items.findIndex(
-        function active() {
-            for (el of items) {
-                for (let el of items) {
-                    if(el.matches(".slider__item_active")) {
-                        return true
-                    };
-                    return false    
-                };
-            };
-        });
-    console.log(activeId) 
-    console.log(currentActiveId)   
+    let activeId = items.findIndex(elem => elem.matches(".slider__item_active"));  
     items[activeId].classList.remove("slider__item_active");
     dots[activeId].classList.remove("slider__dot_active");
     if(currentActiveId < 0) {
@@ -31,35 +19,12 @@ function beActive(currentActiveId) {
     };
 };
 arrowRight.onclick = function() {
-    let activeId = items.findIndex(
-        function active() {
-            for (el of items) {
-                for (let el of items) {
-                    if(el.matches(".slider__item_active")) {
-                        return true
-                    };
-                    return false    
-                };
-            };
-        });
-    console.log(activeId)  
+    let activeId = items.findIndex(elem => elem.matches(".slider__item_active")); 
     let newActive = activeId + 1; 
-    console.log(newActive) 
     beActive(newActive);
 };
 arrowLeft.onclick = function() {
-    let activeId = items.findIndex(
-        function active() {
-            for (el of items) {
-                for (let el of items) {
-                    if(el.matches(".slider__item_active")) {
-                        return true
-                    };
-                    return false    
-                };
-            };
-        });
-    console.log(activeId)    
+    let activeId = items.findIndex(elem => elem.matches(".slider__item_active"));   
     beActive(activeId - 1);
 };  
 dots.forEach(function(dot, id) {
