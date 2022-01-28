@@ -14,7 +14,7 @@ questions.forEach(function(el) {
             document.querySelector(".tooltip_active").classList.remove("tooltip_active");
             evt.target.nextElementSibling?.classList.toggle("tooltip_active"); 
         } else {
-            document.querySelector(".tooltip").classList.toggle("tooltip_active");
+            evt.target.nextElementSibling?.classList.toggle("tooltip_active"); 
         }     
     } else {
        if(evt.target.nextElementSibling?.classList.contains("tooltip_active")) {
@@ -23,7 +23,7 @@ questions.forEach(function(el) {
             document.querySelector(".tooltip_active").classList.remove("tooltip_active");
             evt.target.nextElementSibling?.classList.toggle("tooltip_active");
         } else {
-            document.querySelector(".tooltip").classList.toggle("tooltip_active");
+            evt.target.nextElementSibling?.classList.toggle("tooltip_active");
         }; 
     };
 };  

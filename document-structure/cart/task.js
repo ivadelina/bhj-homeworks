@@ -23,7 +23,7 @@ function addFunc(event) {
   productId = event.target.closest(".product").getAttribute('data-id');
   let shoppingCart = Array.from(document.querySelectorAll(".cart__product"));
   let findProduct = shoppingCart.find(product => product.getAttribute('data-id') === productId);
-  if(findProduct == undefined) {
+  if(!findProduct) {
     cart.insertAdjacentHTML('afterBegin',`<div class="cart__product" data-id=${productId}><img class="cart__product-image" src=${event.target.closest(".product").querySelector(".product__image").src}><div class="cart__product-count">${event.target.closest(".product").querySelector(".product__quantity-value").innerText}</div></div>`); 
   } else {
     let wasNumber = event.target.closest(".product").querySelector(".product__quantity-value").innerText;
