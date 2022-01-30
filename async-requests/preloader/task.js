@@ -9,7 +9,7 @@ xhr.addEventListener('readystatechange', () => {
     } else loading.classList.remove("loader_active");
     if(xhr.readyState === xhr.DONE & xhr.status === 200) {
         let data = JSON.parse(xhr.responseText);
-        let accumulator;
+        let accumulator = "";
         let clearData = Object.values(data.response.Valute);
         for(let i in clearData) {
             accumulator += `
