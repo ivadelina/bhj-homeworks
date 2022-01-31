@@ -9,8 +9,7 @@ let check = (key) => {
     return true
   };
 };
-check("wasClosed");
-if(!check) {
+if(!check("wasClosed")) {
   let sibscribeBox = document.getElementById("subscribe-modal");
   setTimeout(() => sibscribeBox.classList.add("modal_active"), 3000);
   document.querySelector(".modal__close").addEventListener("click", () => {
