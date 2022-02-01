@@ -82,23 +82,16 @@ class Autocomplete {
       }
     */
       let arrOfOptions = Array.from(this.input.options);
-      let arrOfValues = arrOfOptions.map((element) => {
-        return [
-          {
-            text: element.innerHTML,
-            value: element.value,
-          }
-        ];
-      });
       let result = [];
-      for(let i in arrOfValues) {
-        if(arrOfValues[i][0].text.includes(text)) { 
-          console.log(arrOfValues[i][0])
-          result.push(arrOfValues[i][0]) 
+      arrOfOptions.forEach((el) => {
+        if(el.text.includes(text)) {
+          result.push({
+            text: el.textContent, 
+            value: el.value
+          });
         };
-        console.log(result)
-        return result;   
-      };
+      });
+      return result;
   };
 };
 

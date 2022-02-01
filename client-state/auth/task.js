@@ -2,8 +2,10 @@ let button = document.getElementById("signin__btn");
 let greeting = document.getElementById("welcome");
 let userId = document.getElementById("user_id");
 if(localStorage.getItem("id")) {
+
     userId.innerText = localStorage.getItem("id");
     greeting.classList.add("welcome_active");
+    document.getElementById("signin").innerHTML = "";
 };
 button.addEventListener("click", (event) => {
     event.preventDefault();
